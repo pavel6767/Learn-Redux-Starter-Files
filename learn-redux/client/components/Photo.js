@@ -4,8 +4,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class Photo extends React.Component {
   render() {
-    console.log('Photo[props] :: ', this.props);
-    const { post, index, comments } = this.props;
+    const { post, inx, comments } = this.props;
     return (
       <figure className="grid-figure">
         <div className="grid-photo-wrap">
@@ -31,7 +30,7 @@ export default class Photo extends React.Component {
           <p>{post.caption}</p>
           <div className="control-buttons">
             <button
-              onClick={this.props.increment.bind(null, index)}
+              onClick={this.props.increment.bind(null, inx)}
               className="likes"
             >
               &hearts; {post.likes}
