@@ -1,8 +1,8 @@
 // types
 
-const INCREMENT_LIKES = 'INCREMENT_LIKES';
-const ADD_COMMENT = 'ADD_COMMENT';
-const REMOVE_COMMENT = 'REMOVE_COMMENT';
+export const INCREMENT_LIKES = 'INCREMENT_LIKES';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 // increment
 export const increment = index => ({

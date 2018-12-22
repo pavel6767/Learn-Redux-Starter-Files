@@ -5,7 +5,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 export default class Photo extends React.Component {
   render() {
     console.log('Photo[props] :: ', this.props);
-    const { post, i, comments } = this.props;
+    const { post, index, comments } = this.props;
     return (
       <figure className="grid-figure">
         <div className="grid-photo-wrap">
@@ -16,6 +16,7 @@ export default class Photo extends React.Component {
               className="grid-photo"
             />
           </Link>
+
           <CSSTransitionGroup
             transitionName="like"
             transitionEnterTimeout={500}
@@ -28,13 +29,20 @@ export default class Photo extends React.Component {
         </div>
         <figcaption>
           <p>{post.caption}</p>
-          <button className="likes">&hearts; {post.likes}</button>
-          <Link to={`/view/${post.code}`} className="button">
-            <span className="comment-count">
-              <span className="speech-bubble" />
-              {comments[post.code] ? comments[post.code].length : 0}
-            </span>
-          </Link>
+          <div className="control-buttons">
+            <button
+              onClick={this.props.increment.bind(null, index)}
+              className="likes"
+            >
+              &hearts; {post.likes}
+            </button>
+            <Link to={`/view/${post.code}`} className="button">
+              <span className="comment-count">
+                <span className="speech-bubble" />
+                {comments[post.code] ? comments[post.code].length : 0}
+              </span>
+            </Link>
+          </div>
         </figcaption>
       </figure>
     );
