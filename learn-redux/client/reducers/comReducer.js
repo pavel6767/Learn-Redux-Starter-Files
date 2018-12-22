@@ -1,8 +1,9 @@
 const reducer = (state = [], action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
+  // console.log(state);
+  // switch (action.type) {
+  //   default:
+  return state;
+  // }
 };
 
 export default reducer;
