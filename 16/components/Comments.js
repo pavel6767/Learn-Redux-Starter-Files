@@ -7,10 +7,19 @@ const Comments = React.createClass({
         <p>
           <strong>{comment.user}</strong>
           {comment.text}
-          <button className="remove-comment" onClick={this.props.removeComment.bind(null, this.props.params.postId, i)}>&times;</button>
+          <button
+            className="remove-comment"
+            onClick={this.props.removeComment.bind(
+              null,
+              this.props.params.postId,
+              i
+            )}
+          >
+            &times;
+          </button>
         </p>
       </div>
-    )
+    );
   },
   handleSubmit(e) {
     e.preventDefault();
@@ -24,13 +33,17 @@ const Comments = React.createClass({
     return (
       <div className="comments">
         {this.props.postComments.map(this.renderComment)}
-        <form ref="commentForm" className="comment-form" onSubmit={this.handleSubmit}>
-          <input type="text" ref="author" placeholder="author"/>
-          <input type="text" ref="comment" placeholder="comment"/>
+        <form
+          ref="commentForm"
+          className="comment-form"
+          onSubmit={this.handleSubmit}
+        >
+          <input type="text" ref="author" placeholder="author" />
+          <input type="text" ref="comment" placeholder="comment" />
           <input type="submit" hidden />
         </form>
       </div>
-    )
+    );
   }
 });
 
