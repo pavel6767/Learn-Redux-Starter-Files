@@ -6,7 +6,7 @@ const reducer = (state = [], action) => {
       let i = action.index;
       return [
         ...state.slice(0, i),
-        { ...state, likes: state[i].likes + 1 },
+        { ...state[i], likes: state[i].likes + 1 },
         ...state.slice(i + 1)
       ];
     default:

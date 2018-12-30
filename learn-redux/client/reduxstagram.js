@@ -25,7 +25,7 @@ logException(new Error('failed'), {
   email: 'somePersion@priif.cooooom'
 });
 
-Raven.showReportDialog();
+// Raven.showReportDialog();
 
 const router = (
   <Provider store={store}>

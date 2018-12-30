@@ -3,8 +3,11 @@ import { Link } from 'react-router';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class Photo extends React.Component {
+  componentDidUpdate() {
+    console.log('component updated :: ', this.props);
+  }
   render() {
-    const { post, inx, comments } = this.props;
+    const { post, inx, comments } = this.props || {};
     return (
       <figure className="grid-figure">
         <div className="grid-photo-wrap">
