@@ -12,6 +12,10 @@ const defState = {
   comments
 };
 
+const enhnacers = compose(
+  window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+
 const store = createStore(rootReducer, defState);
 
 export const history = syncHistoryWithStore(browserHistory, store);
